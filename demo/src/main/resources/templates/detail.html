@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>상세보기</h1>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>번호</th><td th:text="${dto.uno}"></td>
+        </tr>
+        <tr>
+            <th>아이디</th><td th:text="${dto.id}"></td>
+        </tr>
+        <tr>
+            <th>패스워드</th><td th:text="${dto.pw}"></td>
+        </tr>
+    </table>
+    <a th:href="@{delete(uno=${dto.uno})}">삭제하기</a>
+</body>
+</html>
