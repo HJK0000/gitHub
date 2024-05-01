@@ -5,22 +5,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원 가입</h1>
+	<h1>User List Page</h1>
 	<hr>
-	<form action="save" method="get">
-		<table border="1">
+	<table border="1">
+		<thead>
 			<tr>
-				<th>아이디</th><td><input type="text" name="id"></td>
+				<th>번호</th><th>아이디</th><th>패스워드</th>
 			</tr>
-			<tr>
-				<th>패스워드</th><td><input type="password" name="pw"></td>
+		</thead>
+		<tbody>
+			<tr th:each="list : ${list}">
+				<td><a th:href="@{detail(uno=${list.uno})}">[[${list.uno}]]</a></td>
+				<td th:text="${list.id}"></td>
+				<td th:text="${list.pw}"></td>
 			</tr>
-			<tr>
-				<th></th><td><input type="submit" value="회원가입하기"></td>
-			</tr>
-		</table>
-	
-	
-	</form>
+		</tbody>
+	</table>
+	<a href="saveForm">회원 가입하기</a>
 </body>
 </html>
